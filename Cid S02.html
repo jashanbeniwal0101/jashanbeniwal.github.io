@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tv Shows Original DVD Rip Full Movie</title>
+    <style>
+body {font-family: Arial, sans-serif; background: #fff; margin: 0; padding: 0;}
+   header {background: #2b1500; font-size: 20px; color: white; padding: 0.5px; text-align: center;}
+   .search-container {text-align: center; padding: 10px;}
+   .search-container input[type="text"] {padding: 10px; width: 70%; max-width: 400px; border: 1px solid #ccc; border-radius: 20px; outline: none;}
+   .search-container button {padding: 12px 20px; background-color: #333; color: white; border: 1px solid #dfe1e5; border-radius: 24px; cursor: pointer; font-size: 16px; transition: background-color 0.2s ease-in-out;}
+   .search-container button:hover {background-color: #555;}
+   .home-link {
+   display: inline-block;
+   background-color: orange;
+   color: white;
+   padding: 6px 12px;
+   border-radius: 5px;
+   text-decoration: none;
+   font-size: 14px;
+   margin: 10px 20px;
+   }
+   .section {padding: 20px;}
+   .section-title {display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap;}
+   .section-title h2 {border-left: 5px solid green; padding-left: 10px; margin: 0; font-size: 20px;}
+   .list-buttons a {text-decoration: none; background-color: orange; color: white; padding: 8px 15px; margin-left: 10px; border-radius: 4px; display: inline-block;}
+   .movie-carousel {display: flex; overflow-x: auto; gap: 10px; padding: 10px 0; scroll-snap-type: x mandatory; flex-wrap: nowrap;}
+   .movie-carousel::-webkit-scrollbar {height: 8px;}
+   .movie-carousel::-webkit-scrollbar-thumb {background: #888; border-radius: 4px;}
+   .movie {flex: 0 0 auto; width: 150px; background: #f2f2f2; border-radius: 5px; overflow: hidden; text-align: center; scroll-snap-align: start;}
+   .movie img {width: 100%; height: 220px; object-fit: cover;}
+   .movie p {margin: 5px 0; font-size: 14px;}
+   .movie a {background-color: teal; color: white; padding: 8px 0; display: block; text-decoration: none; font-size: 14px;}
+   .movie button {
+   background-color: teal;
+   color: white;
+   padding: 5px;
+   width: 100%;
+   border: none;
+   cursor: pointer;
+   }
+   .movie a {
+   display: block;
+   background-color: teal;
+   color: white;
+   padding: 8px 0;
+   margin: 5px 10px;
+   border-radius: 5px;
+   text-decoration: none;
+   font-weight: bold;
+   font-size: 14px;
+   }
+   
+   .movie a:hover {
+   background-color: #006666;
+   }
+   .no-results {display: none; text-align: center; color: red; font-weight: bold;}
+   footer {background-color: #2b1500; color: white; text-align: center; padding: 15px; font-size: 14px;}
+ 
+    </style>
+</head>
+<body>
+    <header><h3>HumHIT</h3></header>
+    <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search movies by name...">
+    <button onclick="filterMovies()">Search</button>
+    </div>
+    
+    <a class="home-link" href="index.html">Home</a>
+    
+    <div class="section">
+    <div class="section-title">
+    <h2>All Tv Shows</h2>
+    <div class="list-buttons">
+    </div>
+    <div class="movie-carousel">
+    <div class="movie"><img src="https://i.ibb.co/YBt1snty/image.jpg"><p class="movie-title">Cid S02</p><p>All Episodes</p><a href="CID S02.html"<button>Download</button></a></div>
+    <div class="movie"><img src="https://i.ibb.co/tTJNwtzt/image.jpg"><p class="movie-title">Tenali Rama</p><p>All Episodes</p><a href="Tenali Rama S02.html"<button>Download</button></a></div>
+    <div class="movie"><img src="https://i.ibb.co/mr4PhWMV/image.jpg"><p class="movie-title">Akbar Birbal</p><p>All Episodes</p><a href="Akbar Birbal.html"<button>Download</button></a></div>
+    <div class="movie"><img src="https://i.ibb.co/35tmHXRm/image.jpg"><p class="movie-title">laughter chefs</p><p>All Episodes</p><a href="Laughter Chefs.html"<button>Download</button></a></div>
+    </div>
+    <p class="no-results">No results found.</p>
+    </div>
+    <footer>
+    <p>FilmyHit.Com :: WEB Series Hindi, Punjabi Movies 2020 HD Downloads</p>
+    <p>Filmyhit filmyhit movies</p>
+    <p>&copy; 2016 - 2024 FilmyHit.Com</p>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+    const searchInput = document.getElementById('searchInput');
+    function filterMovies() {
+    const query = searchInput.value.toLowerCase();
+    const allSections = document.querySelectorAll('.section');
+    allSections.forEach(section => {
+    let hasMatch = false;
+    const movies = section.querySelectorAll('.movie');
+    const noResults = section.querySelector('.no-results');
+    movies.forEach(movie => {
+    const title = movie.querySelector('.movie-title').textContent.toLowerCase();
+    if (title.includes(query)) {
+    movie.style.display = 'block';
+    hasMatch = true;
+    } else {
+    movie.style.display = 'none';
+    }
+    });
+    noResults.style.display = hasMatch ? 'none' : 'block';
+    });
+    }
+    searchInput.addEventListener('input', filterMovies);
+    </script>
+    
+    </body>
+    </html>

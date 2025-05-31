@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FilmyHit Clone</title>
+  <style>
+    body {font-family: Arial, sans-serif; background: #fff; margin: 0; padding: 0;}
+    header {background: #2b1500; font-size: 20px; color: white; padding: 0.5px; text-align: center;}
+    .search-container {text-align: center; padding: 10px;}
+    .search-container input[type="text"] {padding: 10px; width: 70%; max-width: 400px; border: 1px solid #ccc; border-radius: 20px; outline: none;}
+    .search-container button {padding: 12px 20px; background-color: #333; color: white; border: 1px solid #dfe1e5; border-radius: 24px; cursor: pointer; font-size: 16px; transition: background-color 0.2s ease-in-out;}
+    .search-container button:hover {background-color: #555;}
+    .section {padding: 20px;}
+    .section-title {display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap;}
+    .section-title h2 {border-left: 5px solid green; padding-left: 10px; margin: 0; font-size: 20px;}
+    .list-buttons a {text-decoration: none; background-color: orange; color: white; padding: 8px 15px; margin-left: 10px; border-radius: 4px; display: inline-block;}
+    .movie-carousel {display: flex; overflow-x: auto; gap: 10px; padding: 10px 0; scroll-snap-type: x mandatory; flex-wrap: nowrap;}
+    .movie-carousel::-webkit-scrollbar {height: 8px;}
+    .movie-carousel::-webkit-scrollbar-thumb {background: #888; border-radius: 4px;}
+    .movie {flex: 0 0 auto; width: 150px; background: #f2f2f2; border-radius: 5px; overflow: hidden; text-align: center; scroll-snap-align: start;}
+    .movie img {width: 100%; height: 220px; object-fit: cover;}
+    .movie p {margin: 5px 0; font-size: 14px;}
+    .movie a {background-color: teal; color: white; padding: 8px 0; display: block; text-decoration: none; font-size: 14px;}
+    .movie button {
+    background-color: teal;
+    color: white;
+    padding: 5px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    }
+    .no-results {display: none; text-align: center; color: red; font-weight: bold;}
+    footer {background-color: #2b1500; color: white; text-align: center; padding: 15px; font-size: 14px;}
+  </style>
+</head>
+<body>
+
+<header><h3>HumHIT</h3></header>
+<div class="search-container">
+  <input type="text" id="searchInput" placeholder="Search movies by name...">
+  <button onclick="filterMovies()">Search</button>
+</div>
+
+<!-- Movie Sections -->
+<div class="section">
+  <div class="section-title"><h2>Latest Updates</h2><div class="list-buttons"><a href="Lastest Updates.html">List Page</a></div></div>
+  <div class="movie-carousel">
+    <div class="movie"><img src="https://i.ibb.co/Kz38Xd02/image.jpg" alt="Chal mera putt 2"><p class="movie-title">Chal mera putt 2</p><p>02 hrs 04 mins</p><a href="Chal mera putt 2.html">Download</a></div>
+    <div class="movie"><img src="https://i.ibb.co/6RP9gJLc/image.jpg" alt="The Diplomat"><p class="movie-title">Hindi Movie Title</p><p>02 hrs</p><a href="The Diplomat.html">Download</a></div>
+    <div class="movie"><img src="https://i.ibb.co/1JXC7JG8/image.jpg" alt="Jewel Thief"><p class="movie-title">Jewel Thief The Heist Begins</p><p>02 hrs 15 mins</p><a href="Jewel Thief The Heist Begins.html">Download</a></div>
+    <div class="movie"><img src="https://i.ibb.co/JwGzFsz0/image.jpg" alt="Law Abiding Citizen"><p class="movie-title">Law Abiding Citizen</p><p>01 hr 45 mins</p><a href="Law Abiding Citizen.html">Download</a></div>
+  </div>
+  <p class="no-results">No results found.</p>
+</div>
+
+<div class="section">
+  <div class="section-title">
+    <h2>All punjabi Movies</h2>
+    <div class="list-buttons"><a href="All Punjabi Movies.html">List Page</a></div>
+  </div>
+  <div class="movie-carousel">
+<div class="movie"><img src="https://i.ibb.co/Kz38Xd02/image.jpg" alt="Chal mera putt 2"><p class="movie-title">Chal mera putt 2</p><p>02 hrs 04 mins</p><a href="Chal mera putt 2.html">Download</a></div>
+<div class="movie"><img src="https://i.ibb.co/Xfv0G2gP/image.jpg"><p class="movie-title">Vair</p><p>02 hr 15 mins</p><a href="Vair.html"<button>Download</button></a></div>
+    <div class="movie"><img src="https://i.ibb.co/S4gwdh05/image.jpg"><p class="movie-title">Slow Burn</p><p>02 hrs 8 min</p><a href="Slow Burn.html"<button>Download</button></a></div>
+    <p class="no-results">No results found.</p>
+    </div>
+    
+<div class="section">
+  <div class="section-title">
+    <h2>All Hindi Movies</h2>
+    <div class="list-buttons"><a href="All Hindi Movies.html">List Page </a></div>
+  </div>
+  <div class="movie-carousel">
+    <div class="movie"><img src="https://i.ibb.co/6RP9gJLc/image.jpg"><p class="movie-title">The Diplomat 2025</p><p>02 hr 15 mins</p><a href="The Diplomat.html"<button>Download</button></a></div>
+    <div class="movie"><img src="https://i.ibb.co/5WXZ1m48/image.jpg"><p class="movie-title">The Bhootnii</p><p>02 hrs 8 min</p><a href="The Bhootni.html"<button>Download</button></a></div>
+    <div class="movie"><img src="https://i.ibb.co/WL9dm19/image.jpg"><p class="movie-title">Raid 2</p><p>02 hrs 17</p><a href="Raid 2.html"<button>Download</button></a></div>
+    <div class="movie"><img src="https://i.ibb.co/yFLTwG2v/image.jpg"><p class="movie-title">Costao</p><p>02 hrs 15 mins</p><a href="Costao.html"<button>Download</button></a></div>
+  </div>
+  <p class="no-results">No results found.</p>
+</div>
+
+<div class="section">
+  <div class="section-title">
+    <h2>South Indian Movies in Hindi</h2>
+    <div class="list-buttons"><a href="All South Movies In Hindi.html">List Page</a></div>
+  </div>
+  <div class="movie-carousel">
+    <div class="movie"><img src="https://i.ibb.co/1JXC7JG8/image.jpg"><p class="movie-title">Jewel Thief The Heist Begins</p><p>02 hrs 45 mins</p><a href="Jewel Thief The Heist Begins.html"<button>Download</button></a></div>
+    <div class="movie"><img src="https://i.ibb.co/XfCwQfCJ/image.jpg"><p class="movie-title">KGF Chapter 2</p><p>02 hrs 50 mins</p><a href="KGF Chapter 2.html"<button>Download</button></a></div>
+    <div class="movie"><img src="https://i.ibb.co/DDGnBpzQ/image.jpg"><p class="movie-title">RRR</p><p>850 mb | 03 hrs</p><a href="RRR.html"<button>Download</button></a></div>
+    <div class="movie"><img src="https://i.ibb.co/svSKM3KP/image.jpg"><p class="movie-title">Baahubali 2</p><p>900 mb | 03 hrs 10 mins</p><a href="Baahubali 2.html"<button>Download</button></a></div>
+  </div>
+  <p class="no-results">No results found.</p>
+</div>
+
+<div class="section">
+  <div class="section-title">
+    <h2>All hollywood Movies in Hindi</h2>
+    <div class="list-buttons"><a href="All Hollywood Movies In Hindi.html">List Page</a></div>
+  </div>
+  <div class="movie-carousel">
+    <div class="movie"><img src="https://i.ibb.co/JwGzFsz0/image.jpg"><p class="movie-title">Law Abiding Citizen</p><p>01 hrs 49 mins</p><a href="Law Abiding Citizen.html"<button>Download</button></a></div>
+    <div class="movie"><img src="https://i.ibb.co/SDFnwjQv/image.jpg"><p class="movie-title">I Spit on Your Grave Vengeance Is Mine 4</p><p>01 hrs 32 mins</p><a href="I Spit on Your Grave Vengeance Is Mine 4.html"<button>Download</button></a></div>
+    <div class="movie"><img src="https://i.ibb.co/Kxg7kv76/image.jpg"><p class="movie-title">I Spit on Your Grave 2</p><p>1 hrs 46 min</p><a href="I Spit on Your Grave 2.html"<button>Download</button></a></div>
+    <div class="movie"><img src="https://i.ibb.co/j9ZZHSgq/image.jpg"><p class="movie-title">Snake Eyes</p><p>02 hrs 03 mins</p><a href="Snake Eyes.html"<button>Download</button></a></div>
+  </div>
+  <p class="no-results">No results found.</p>
+</div>
+<!-- Footer -->
+
+<div class="section">
+  <div class="section-title">
+    <h2>All Cartoons in Multi Lan</h2>
+    <div class="list-buttons"><a href="All Cartoons.html">List Page</a></div>
+  </div>
+  <div class="movie-carousel">
+    <div class="movie"><img src="https://i.ibb.co/kgp5Fb5M/image.jpg"><p class="movie-title"><p class="movir-title">Mickey Mouse Clubhouse</p><p>All Seasons</p><a href="Mickey MousecClubhouse.html"<button>Download</button></a></div>
+    <div class="movie"><img src="https://i.ibb.co/N6FyqM4M/image.jpg"><p class="movie-title">Motu Patli</p><p>All Season </p><a href="Motu Patlu.html"<button>Download</button></a></div>
+    <div class="movie"><img src="https://i.ibb.co/TDJbZS3g/9a2a2d36784f.jpg"><p class="movie-title">Solo Leveling</p><p>All Seasons</p><a href="Solo Leveling.html"<button>Download</button></a></div>
+    <div class="movie"><img src="https://i.ibb.co/7xfR2Y9R/c218282a7a2a.jpg"><p class="movie-title">The Apothecary Diaries</p><p>All Seasons</p><a href="The Apothecary Dairies.html"<button>Download</button></a></div>
+  </div>
+  <p class="no-results">No results found.</p>
+</div>
+
+<div class="section">
+  <div class="section-title">
+    <h2>All Tv series in Hindi</h2>
+    <div class="list-buttons"><a href="TV Show.html">List Page</a></div>
+  </div>
+  <div class="movie-carousel">
+    <div class="movie"><img src="https://i.ibb.co/YBt1snty/image.jpg"><p class="movie-title">Cid S02</p><p>All Episodes</p><a href="CID S02.html"<button>Download</button></a></div>
+    <div class="movie"><img src="https://i.ibb.co/tTJNwtzt/image.jpg"><p class="movie-title">Tenali Rama</p><p>All Episodes</p><a href="Tenali Rama S02.html"<button>Download</button></a></div>
+    <div class="movie"><img src="https://i.ibb.co/mr4PhWMV/image.jpg"><p class="movie-title">Akbar Birbal</p><p>All Episodes</p><a href="Akbar Birbal.html"<button>Download</button></a></div>
+    <div class="movie"><img src="https://i.ibb.co/35tmHXRm/image.jpg"><p class="movie-title">laughter chefs</p><p>All Episodes</p><a href="Laughter Chefs.html"<button>Download</button></a></div>
+  </div>
+  <p class="no-results">No results found.</p>
+</div>
+
+<!-- Add more sections similarly like 'All Punjabi Movies', 'Hindi Movies', etc. -->
+<!-- Repeat structure by changing titles, images, and movie names accordingly -->
+
+<footer>
+  <p>HumHit.Com :: WEB Series Hindi, Punjabi Movies 2020 HD 
+  <p>Humhit humyhit movies</p>
+  <p>&copy; 2025 - 2030 HumhitHit.Com</p>
+</footer>
+
+<!-- JavaScript -->
+<script>
+  const searchInput = document.getElementById('searchInput');
+  function filterMovies() {
+    const query = searchInput.value.toLowerCase();
+    const allSections = document.querySelectorAll('.section');
+    allSections.forEach(section => {
+      let hasMatch = false;
+      const movies = section.querySelectorAll('.movie');
+      const noResults = section.querySelector('.no-results');
+      movies.forEach(movie => {
+        const title = movie.querySelector('.movie-title').textContent.toLowerCase();
+        if (title.includes(query)) {
+          movie.style.display = 'block';
+          hasMatch = true;
+        } else {
+          movie.style.display = 'none';
+        }
+      });
+      noResults.style.display = hasMatch ? 'none' : 'block';
+    });
+  }
+  searchInput.addEventListener('input', filterMovies);
+</script>
+
+</body>
+</html>

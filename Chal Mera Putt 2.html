@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chal Mera Putt 2 - Humwatch</title>
+       <style>
+        * { box-sizing: border-box; }
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #0f0f24; 
+            color: #f4f4f4; 
+            line-height: 1.6; 
+        }
+        a { text-decoration: none; color: inherit; }
+        .navbar { 
+            background: linear-gradient(90deg, #1e1e3f, #2a2a5c); 
+            padding: 1rem 2rem; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); 
+        }
+        .navbar a { 
+            font-size: 1.8rem; 
+            font-weight: 600; 
+            color: #fff; 
+        }
+        .video-section { 
+            max-width: 900px; 
+            margin: 2rem auto; 
+            background-color: #000; 
+            padding: 1rem; 
+            border-radius: 12px; 
+            overflow: hidden; 
+        }
+        .details, .content { 
+            max-width: 900px; 
+            margin: 1.5rem auto; 
+            background-color: #1b1b32; 
+            padding: 2rem; 
+            border-radius: 12px; 
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4); 
+        }
+        .title { 
+            font-size: 2rem; 
+            font-weight: 700; 
+            margin-bottom: 1rem; 
+            color: #fcd53f; 
+        }
+        .tags span, .badge { 
+            background-color: #2e2e5e; 
+            display: inline-block; 
+            padding: 0.4rem 1rem; 
+            border-radius: 20px; 
+            margin-right: 0.5rem; 
+            margin-bottom: 0.4rem; 
+            font-size: 0.85rem; 
+        }
+        .meta, .description { 
+            margin-top: 1rem; 
+            font-size: 0.95rem; 
+        }
+        .link { 
+            display: inline-block; 
+            margin-top: 1.2rem; 
+            color: #00d8ff; 
+            font-weight: bold; 
+            cursor: pointer; 
+            transition: color 0.2s; 
+        }
+        .link:hover { color: #38f8ff; }
+        .home-link { 
+            display: inline-block; 
+            background-color: orange; 
+            color: white; 
+            padding: 8px 14px; 
+            border-radius: 6px; 
+            font-size: 14px; 
+            margin: 10px 10px 0 20px; 
+            font-weight: 500; 
+        }
+        .tabs { 
+            display: flex; 
+            justify-content: center; 
+            background-color: #1c1c3c; 
+            padding: 1.5rem 0; 
+            border-top: 1px solid #333; 
+            flex-wrap: wrap; 
+        }
+        .movie-carousel { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 15px; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        .movie { 
+            width: 280px; 
+            background: #1b1b32; 
+            color: #f4f4f4; 
+            border-radius: 8px; 
+            text-align: center; 
+            padding-bottom: 10px; 
+            transition: transform 0.2s; 
+            overflow: hidden; 
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); 
+        }
+        .movie:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+        }
+        .movie img { 
+            width: 100%; 
+            height: auto; 
+            aspect-ratio: 16 / 9; 
+            object-fit: cover; 
+            border-top-left-radius: 8px; 
+            border-top-right-radius: 8px; 
+        }
+        .movie p { 
+            margin: 8px 0; 
+            font-size: 14px; 
+            color: #f4f4f4; 
+        }
+        .movie a { 
+            display: block; 
+            background-color: #00bfa5; 
+            color: white; 
+            padding: 8px 0; 
+            margin: 8px 12px; 
+            border-radius: 6px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 14px; 
+            transition: background-color 0.3s; 
+        }
+        .movie a:hover { background-color: #009e88; }
+        .info-item { 
+            display: flex; 
+            justify-content: space-between; 
+            padding: 0.7rem 0; 
+            border-bottom: 1px solid #444; 
+        }
+        .badge-container { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 0.5rem; 
+        }
+        .footer { 
+            background-color: #111122; 
+            padding: 2.5rem 1rem; 
+            color: #aaa; 
+            font-size: 0.85rem; 
+            text-align: center; 
+        }
+        .footer .badges, .footer .social, .footer .links { 
+            display: flex; 
+            justify-content: center; 
+            gap: 1rem; 
+            flex-wrap: wrap; 
+            margin-bottom: 1.5rem; 
+        }
+        .footer img { height: 38px; }
+        .footer .social img { width: 24px; height: 24px; }
+        .disclaimer { 
+            margin-top: 1rem; 
+            font-style: italic; 
+            color: #888; 
+        }
+        @media screen and (max-width: 768px) { 
+            .movie { width: 45%; } 
+            .title { font-size: 1.5rem; } 
+        }
+        @media screen and (max-width: 480px) { 
+            .movie { width: 90%; } 
+        }
+    </style>
+</head>
+<body>
+    <!-- Full HTML content from original -->
+    <div class="navbar"><a href="#">Humwatch</a></div>
+
+    <div class="video-section">
+        <div style="padding:56.25% 0 0 0;position:relative;">
+            <iframe src="https://drive.google.com/file/d/1Yb0DDfAKbx6OV3ZHXJxvBkqJUIEwwj2f/preview" 
+                    allow="autoplay; fullscreen; picture-in-picture" 
+                    allowfullscreen 
+                    frameborder="0"
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;">
+            </iframe>
+        </div>
+    </div>
+
+    <a class="home-link" href="index.html">Home</a>
+    <a class="home-link" href="All Punjabi Movies.html">Punjabi Movies</a>
+
+    <div class="details">
+        <div class="title">Chal Mera Putt 2 (2020)</div>
+        <div class="tags">
+            <span>Comedy</span><span>Emotional</span><span>Romantic</span><span>U/A 13+</span><span>2 hrs 15 mins</span>
+        </div>
+        <div class="meta">
+            Audio Languages: <strong>Punjabi</strong> | Subtitles: <strong>English</strong> | Genre: <strong>Comedy, Emotional, Romantic</strong>
+        </div>
+        <div class="description">
+            Friendship and love between illegal immigrants struggling and facing challenges. Showing us that when it comes to the struggle of life, no border can divide human hearts and the love inside.
+        </div>
+        <a class="link" onclick="toggleCast()">View Director and Cast</a>
+        <div id="cast-info" style="display:none;margin-top:1rem;">
+            <div><strong>Director:</strong> Janjot Singh</div>
+            <div><strong>Cast:</strong> Amrinder Gill as Jinder, Simi Chahal as Savy, Gurshabad as Bikkar Chacha, Garry Sandhu as Deepa, Nasir Chinyoti, Zafri Khan, Iqbal Mahmud</div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <div class="movie-carousel">
+            <div class="movie">
+                <img src="https://i.ibb.co/B2N3tQTD/image.jpg?text=Vair" alt="Vair">
+                <p>Vair</p>
+                <a href="Vair.html">Download</a>
+            </div>
+            <div class="movie">
+                <img src="https://i.ibb.co/n87ct0Gc/image.jpg?text=Slow+Burn" alt="Slow Burn">
+                <p>Slow Burn</p>
+                <a href="Slow Burn.html">Download</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="title">Details About Chal Mera Putt 2:</div>
+        <div class="info-item"><div>Release Date</div><div class="badge">25 Apr 2020</div></div>
+        <div class="info-item"><div>Total Movies in Series</div><div class="badge">3</div></div>
+        <div class="info-item"><div>Audio Languages</div><div class="badge">Punjabi</div></div>
+        <div class="info-item">
+            <div>Genres</div>
+            <div class="badge-container">
+                <div class="badge">Comedy</div>
+                <div class="badge">Emotional</div>
+                <div class="badge">Romantic</div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="badges">
+            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"></a>
+            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Download_on_the_App_Store_Badge.svg" alt="App Store"></a>
+        </div>
+        <div class="social">
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+        </div>
+        <div class="links">
+            <a href="#">Channels</a>
+            <a href="#">About Us</a>
+            <a href="#">Help Center</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Preferences</a>
+        </div>
+        <div class="disclaimer">Do not Sell or Share my Personal Information</div>
+    </footer>
+
+    <script>
+        function toggleCast() {
+            const castInfo = document.getElementById("cast-info");
+            const link = document.querySelector(".link");
+            const isHidden = castInfo.style.display === 'none';
+            castInfo.style.display = isHidden ? 'block' : 'none';
+            link.textContent = isHidden ? 'Hide Director and Cast' : 'View Director and Cast';
+        }
+    </script>
+</body>
+</html>
